@@ -1,0 +1,47 @@
+/*폰트*/
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;600&display=swap');
+* {font-family: 'Gothic A1', 'Sans-serif'; word-break: keep-all; box-sizing: border-box;}
+html, body {width: 100%; height: 100%;}
+
+/* top 메뉴 */
+.fix_top{position: fixed; top: 0; left: 0; width: 100%;}
+.top_menu{max-width: 1540px; margin: 0 auto; height: 80px; display: flex; align-items: center; justify-content: space-between; }
+.top_menu .main_logo img{cursor: pointer;}
+.top_menu .main_menu ul{display: flex;}
+.top_menu .main_menu li{color: #a09b99; font-size: 24px; padding: 3px 8px; cursor: pointer; margin-left:25px; font-weight: 600;}
+.top_menu .main_menu li:hover{color: #000000;}  .top_menu .main_menu li.active{color: #000000;}
+
+/* main */
+#home{width: 100%; height: 100vh;  background-image: url(../img/main_skeeper.png); background-repeat: no-repeat; background-position: right bottom; background-size: auto;}
+.maintxt{max-width: 1400px; margin: 0 auto ; padding-top: 230px;}
+.maintxt .matxb{font-size: 210px; color: #f6b55b; letter-spacing: -10px; font-weight: 600; line-height: 270px;}
+.maintxt .matxs{font-size: 76px; color: #000000; font-weight: 600;}
+.maintxt .matxs > span{color: #e3e3e3;}
+
+/* main2 */
+.main2{max-width: 1400px; margin: 0 auto ; height: 100vh;}
+.main2txt{padding-top: 100px;}
+.main2txt > h2{font-size: 40px; color: #a09b99; font-weight: bold;}
+.main2txt p{font-size: 40px; font-weight: bold; color: #0c0c0c; padding: 30px; letter-spacing: -2px;}
+
+.tecarea{display: flex; align-items: center; height: 480px;}
+.tecarea .tecarea_img{width: 68%; text-align: center;}
+.tecarea .tecarea_img img{width: 70%;}
+.tecarea .tecarea_txt{width: 32%; }
+.tecarea .tecarea_txt2{min-width: 100%; width: 100%;}
+
+
+.tecarea .tecarea_txt2 p{color: #0c0c0c; font-size: 40px; padding-bottom: 26px;}
+.tecarea .txt1ch li{font-size: 60px; color: #a3a3a3; height: 120px; display: flex; align-items: center;}
+.tecarea .txt1ch li img{padding-right: 39px;}
+.tecarea .txt1ch li:nth-child(3) img{padding-right: 20px;}
+.tecarea .txt2ch li{font-size: 80px; color: #a3a3a3; display: flex; align-items: center; position: relative; font-weight: bold;}
+.tecarea .txt2ch li:nth-child(1)::after{content: ''; position: absolute; bottom: 15%; left: 0; height: 2px; 
+    background-color: #eaeaea; width: 290px;}
+.tecarea .txt2ch li:nth-child(2)::after{content: ''; position: absolute; bottom: 15%; left: 0; height: 4px; 
+    background-color: #d3d3d3; width: 290px;}
+.tecarea .txt2ch li span{font-size: 40px; color: #0c0c0c; padding-left: 30px; font-weight: 500;}
+.tecarea .txt3ch li{font-size: 40px; color: #0c0c0c; display: flex; align-items: center; height: 100px;}
+.tecarea .txt3ch li img{padding-right: 25px;}
+
+

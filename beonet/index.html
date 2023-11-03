@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=no" />
+  <title>beonet</title>
+  <!-- style -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- 파비콘 -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+  <script src="./js/code.jquery.com_jquery-3.7.0.min.js"></script>
+  <!-- slick 불러오기 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+  
+</head>
+
+<body>
+  <div id="wrap">
+    <!-- 탑 메뉴부분 -->
+    <div class="fix_top">
+      <div class="top_menu" >
+        <div class="main_logo"><a href="#">
+          <img src="img/logo.png">
+        </a></div>
+        <div class="main_menu">
+          <ul>
+            <li class="active ">Meditory</li>
+            <li>Atraer camping</li>
+            <li>Goltory golf</li>
+            <li>CONTACT</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- header부분 -->
+    <div id="home">
+        <div class="maintxt">
+          <p class="matxb">SM-300</p>
+          <P class="matxs">스마트한 혁신 <span> 진짜 원격진료</span></P>
+        </div>
+    </div>
+    <!-- header2 부분 -->
+    <div class="main2">
+      <div class="main2txt">
+        <h2 class="reveal">KEY POINT</h2>
+        <p class="reveal">복잡한 기술과 반대 되는<br>
+          간편한 사용 방식</p>
+      </div>
+      <div class="tecarea">
+        <div class="tecarea_img reveal" id="scroro">
+          <img src="./img/swimg.png">
+        </div>
+        <div class="tecarea_txt reveal">
+          <div class="tecarea_txt2">
+            <p>Skeeper 전용 Interface</p>
+            <ul class="txt1ch">
+              <li><img src="./img/win.png">Win</li>
+              <li><img src="./img/apple.png">Apple</li>
+              <li><img src="./img/andr.png">Android</li>
+            </ul>
+          </div>
+          <div class="tecarea_txt2">
+            <p>충전식으로 교체 없이</p>
+            <ul class="txt2ch">
+              <li>2H <span>충전시간</span></li>
+              <li>8H <span>사용시간</span></li>
+            </ul>
+          </div>
+          <div class="tecarea_txt2">
+            <p>실속 있는 알림등</p>
+            <ul class="txt3ch">
+              <li><img src="./img/ticon1.png">Lung(폐)</li>
+              <li><img src="./img/ticon2.png">Heart rate(심박)</li>
+              <li><img src="./img/ticon3.png">Child(아이)</li>
+              <li><img src="./img/ticon4.png">Blutooth(무선연결)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</body>
+
+
+<script>
+  // 텍스트 스크롤
+    var mainSlider = $('.tecarea_txt');
+    var innerText = $('.inner-text');
+
+    mainSlider.slick({
+        slidesToShow: 1,
+        dots: false,
+        speed: 500,
+    });
+
+    mainSlider.on('wheel', function(e) {
+      e.preventDefault();
+
+      
+
+      if (e.originalEvent.deltaY < 0) {
+        // $(".tecarea_txt2").fadeOut();
+        // $(this).fadeOut(console.log('this'));
+        // $(this).fadeOut(2000, function(){
+        //   $(this).fadeIn(2000);
+        // });
+        $(this).slick('slickPrev');
+       
+      } else {
+        // $(".tecarea_txt2").fadeIn();
+        // $(".tecarea_txt2").fadeOut();  
+        // $(this).fadeOut(2000, function(){
+        //   $(this).fadeIn(2000);
+        // });
+        $(this).slick('slickNext');
+      }
+    });
+    
+  innerText.on('wheel', function(e) {
+      e.stopPropagation();
+  })
+
+
+  // top 메뉴
+  $('.main_menu ul li').click(function() {
+      $('.main_menu ul li').removeClass('active')
+      $(this).addClass('active')
+  });
+
+
+  //스크롤 시 fade 효과
+    window.addEventListener("scroll", function(){
+          var sections = document.querySelectorAll(".reveal")
+          for (var i = 0; i < sections.length; i++) {
+              var windowHeight = window.innerHeight;
+              var elementTop = sections[i].getBoundingClientRect().top;
+              var elementVisible = 150;
+              
+              if (elementTop < windowHeight - elementVisible) {
+              sections[i].classList.add("active");
+              } else {
+                sections[i].classList.remove("active");
+              }
+          }
+      });
+
+
+</script>
+</html>
